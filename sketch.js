@@ -70,6 +70,7 @@ deer = new Animal("deer")
 bird = new Animal("bird")
 bat = new Animal("bat");
 bat.info = "Bats are nocturnal. So they sleep in the day and are awake at night!"
+bird.info = "Birds"
 var locations = [new rect_info(20,20,20,20)];
 
 var animals = {"squirrel":squirrel, "owl": owl, "rabbit": rabbit,"chipmunk":chipmunk,
@@ -183,9 +184,10 @@ if(answered){
     stroke(255);
     text("Nice Work! Keep Going?",8.1/10*imgwidth,19.5/20*imgheight)
   }
+
 }
 
-function mouseClicked(){
+function mousePressed(){
   if (answered == false){
     if(inBox()){
       answered = true;
@@ -205,5 +207,6 @@ else{
         }
       }
 }
+return false;
 
 }
