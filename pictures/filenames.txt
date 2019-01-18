@@ -1,0 +1,14 @@
+bat1.png
+bird1.png
+chipmunk1.png
+deer1.png
+deer2.png
+filenames.txt
+frog1.png
+owl1.png
+possum1.png
+rabbit1.png
+racoon1.png
+squirrel1.png
+squirrel2.png
+test.jpg

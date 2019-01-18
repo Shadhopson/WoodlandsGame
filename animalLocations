@@ -1,0 +1,15 @@
+{
+  "bat1.png": [0.396,0.725, 0.65, 0.9],
+  "bird1.png": [0.2,0.53, 0.52, 0.8],
+  "chipmunk1.png": [0.4,0.54,0.44,0.64],
+  "deer1.png": [0.44,0.94, 0.131,0.76],
+  "deer2.png": [0.15,0.43,0.37,0.765],
+  "frog1.png": [],
+  "owl1.png": [],
+  "possum1.png": [],
+  "rabbit1.png": [],
+  "racoon1.png": [],
+  "squirrel1.png": [],
+  "squirrel2.png": [],
+  "squirrel3.png":[0.387,0.77,0.065,0.303]
+}
