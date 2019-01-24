@@ -38,7 +38,6 @@ otter1.jpg
 otter2.JPG
 otter3.jpg
 owl1.png
-porcupine.jpg
 porcupine2.jpg
 possum1.png
 rabbit1.png
@@ -46,7 +45,6 @@ raccoon1.jpg
 raccoon2.jpg
 raccoon3.jpg
 red fox1.jpg
-red fox2.jpg
 squirrel1.png
 squirrel2.png
 weasel1.jpg
@@ -76,40 +74,33 @@ locations_dict = {
   "coyote4.jpg":[0.58,0.73,0.59,0.89],
   "deer1.jpg":[0.4,0.55,0.26,0.99],
   "grey fox1.jpg":[0.32,0.93,0.19,0.64],
-  "grey fox2.jpg":[],
-  "marten1.jpg":[],
-  "marten2.jpg":[],
-  "mink1.png":[],
-  "mink2.jpeg":[],
-  "mink2.jpg":[],
-  "moose1.JPG":[],
-  "moose2.jpg":[],
-  "moose3.jpg":[],
-  "moose4.jpg":[],
-  "muskrat.jpg":[],
-  "muskrat1.jpg":[],
-  "muskrat2.JPG":[],
-  "muskrat3.jpg":[],
-  "otter1.jpg":[],
-  "otter2.JPG":[],
-  "otter3.jpg":[],
-  "owl1.png":[],
-  "porcupine.jpg":[],
-  "porcupine2.jpg":[],
-  "possum1.png":[],
-  "rabbit1.png":[],
-  "raccoon1.jpg":[],
-  "raccoon2.jpg":[],
-  "raccoon3.jpg":[],
-  "red fox1.jpg":[],
-  "red fox2.jpg":[],
-  "squirrel1.png":[],
-  "squirrel2.png":[],
-  "weasel1.jpg":[],
-  "weasel2.jpg":[],
-  "weasel3.jpg":[],
-  "woodrat1.JPG":[],
-  "woodrat2.jpg":[],
+  "grey fox2.jpg":[0.26,0.51,0.47,0.78],
+  "marten1.jpg":[0.17,0.34,0.33,0.9],
+  "marten2.jpg":[0.08,0.8,0.27,0.6],
+  "mink1.png":[0.42,0.82,0.41,0.8],
+  "mink2.jpeg":[0.42,0.65,0.25,0.69],
+  "mink2.jpg":[0.05,0.52,0.43,0.73],
+  "moose1.JPG":[0.41,0.58,0.4,0.6],
+  "moose2.jpg":[0.52,0.72,0.4,0.67],
+  "moose3.jpg":[0.64,0.73,0.48,0.65],
+  "moose4.jpg":[0.13,0.94,0.05,0.85],
+  "muskrat.jpg":[0.37,0.63,0.4,0.7],
+  "muskrat1.jpg":[0.25,0.68,0.5,0.68],
+  "muskrat2.JPG":[0.48,0.57,0.53,0.64],
+  "muskrat3.jpg":[0.57,0.93,0.37,0.86],
+  "otter1.jpg":[0.19,0.57,0.43,0.7],
+  "otter2.JPG":[0.4,0.55,0.38,0.62],
+  "otter3.jpg":[0.19,0.48,0.43,0.61],
+  "porcupine2.jpg":[0.4,0.61,0.35,0.62],
+  "raccoon1.jpg":[0.25,0.45,0.44,0.88],
+  "raccoon2.jpg":[0.12,0.24,0.41,0.8],
+  "raccoon3.jpg":[0.37,0.66,0.36,0.71],
+  "red fox1.jpg":[0.3,0.9,0.37,0.83],
+  "weasel1.jpg":[0.27,0.47,0.38,0.77],
+  "weasel2.jpg":[0.54,0.86,0.25,0.56],
+  "weasel3.jpg":[0.28,0.42,0.33,0.75],
+  "woodrat1.JPG":[0.69,0.99,0.33,0.72],
+  "woodrat2.jpg":[0.08,0.38,0.35,0.82],
   "bat1.png": [0.356,0.725, 0.05, 0.9],
   "bird1.png": [0.2,0.53, 0.52, 0.8],
   "chipmunk1.png": [0.4,0.54,0.44,0.64],
@@ -125,7 +116,7 @@ locations_dict = {
   "squirrel3.png":[0.387,0.77,0.065,0.303]
 }
 var debugging = true;
-current_animal = 14;
+current_animal = 0;
 file_list = file_string.split("\n");
 console.log(file_list);
 var screenWidth = window.innerWidth;
@@ -240,7 +231,8 @@ function drawBox(pos){
   bottom = pos[3];
   //console.log(left);
   //console.log(pos,left,right, topp, pos[2], bottom)
-  rect(img_x + left*imgwidth, img_y + topp*imgheight, right*imgwidth - left*imgwidth, bottom*imgheight-topp*imgheight);
+  //fill(255,255,255,10);
+  rect(img_x + left*imgwidth, img_y + topp*imgheight, right*imgwidth - left*imgwidth, bottom*imgheight-topp*imgheight, 20);
 }
 var answered = false;
 next_box = {"left":8/10*imgwidth,"top":19/20*imgheight, "width":1.8/10*imgwidth, "height":1/10*imgheight};
@@ -251,8 +243,8 @@ function draw(){
   fill(255);
   textAlign(CENTER, CENTER)
   if (answered){
-    textSize(textBoxHeight/3);
-    text(photos[current_animal].description,img_x+ imgwidth/2, img_y -  textBoxHeight/3 );
+    textSize(textBoxHeight/1.5);
+    text("That's the " + photos[current_animal].name+"! Awesome job!",img_x+ imgwidth/2, img_y -  textBoxHeight/3 );
     console.log(photos[current_animal].name)
   }
   else{
@@ -267,11 +259,14 @@ function draw(){
     textSize(15);
     text(precise(((mouseX -img_x)/imgwidth)) + ", " + precise((mouseY -img_y)/imgheight), mouseX, mouseY)
   }
-  noFill();
+  //noFill();
   //rect(img_x + 0.387*imgwidth, img_y + 0.065*imgheight, 0.777*imgwidth - 0.385*imgwidth, 0.303*imgheight-0.065*imgheight);
-//if(answered){
+if(answered){
+  noStroke();
+  fill(124,252,0,75)
   drawBox(photos[current_animal].location)
-//}
+  stroke(255);
+}
 //  drawBox(0.387,0.77,0.065,0.303 );
   if(answered){
     fill(3,22,52);
