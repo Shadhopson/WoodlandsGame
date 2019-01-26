@@ -115,27 +115,27 @@ locations_dict = {
   "squirrel2.png": [0.46,0.82,0.15,0.52],
   "squirrel3.png":[0.387,0.77,0.065,0.303]
 }
-var debugging = true;
+var debugging = false;
 current_animal = 0;
 file_list = file_string.split("\n");
 var screenWidth = window.innerWidth;
 var  screenHeight = window.innerHeight;//650;
 
-class rect_info {
-	constructor(left, right, top, bottom){
-  	this.left = left;
-    this.right = right;
-    this.top = top;
-    this.bottom = bottom;
-  }
-}
-class Animal {
-	constructor(name){
-		this.name = name;
-		this.info = "";
-	  this.photos = [];
-	}
-}
+// class rect_info {
+// 	constructor(left, right, top, bottom){
+//   	this.left = left;
+//     this.right = right;
+//     this.top = top;
+//     this.bottom = bottom;
+//   }
+// }
+// class Animal {
+// 	constructor(name){
+// 		this.name = name;
+// 		this.info = "";
+// 	  this.photos = [];
+// 	}
+// }
 
 class Photo {
   constructor(name, image, location, description){
@@ -147,22 +147,22 @@ class Photo {
   }
 }
 
-squirrel =  new Animal("squirrel");
-owl = new Animal("owl")
-rabbit = new Animal("rabbit")
-chipmunk = new Animal("chipmunk")
-racoon = new Animal("racoon")
-possum = new Animal("possum")
-frog = new Animal("frog")
-deer = new Animal("deer")
-bird = new Animal("bird")
-bat = new Animal("bat");
-bat.info = "Bats are nocturnal. So they sleep in the day and are awake at night!"
-bird.info = "Birds"
-var locations = [new rect_info(20,20,20,20)];
+// squirrel =  new Animal("squirrel");
+// owl = new Animal("owl")
+// rabbit = new Animal("rabbit")
+// chipmunk = new Animal("chipmunk")
+// racoon = new Animal("racoon")
+// possum = new Animal("possum")
+// frog = new Animal("frog")
+// deer = new Animal("deer")
+// bird = new Animal("bird")
+// bat = new Animal("bat");
+//bat.info = "Bats are nocturnal. So they sleep in the day and are awake at night!"
+//bird.info = "Birds"
+//var locations = [new rect_info(20,20,20,20)];
 
-var animals = {"squirrel":squirrel, "owl": owl, "rabbit": rabbit,"chipmunk":chipmunk,
- "racoon":racoon, "possum":possum, "frog":frog,"deer":deer, "bird":bird, "bat":bat};
+//var animals = {"squirrel":squirrel, "owl": owl, "rabbit": rabbit,"chipmunk":chipmunk,
+// "racoon":racoon, "possum":possum, "frog":frog,"deer":deer, "bird":bird, "bat":bat};
 function setup() {
   photos = [];
     //for ( key in animals){
