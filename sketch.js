@@ -119,7 +119,7 @@ var debugging = false;
 current_animal = 0;
 file_list = file_string.split("\n");
 var screenWidth = window.innerWidth;
-var  screenHeight = window.innerHeight;//650;
+var  screenHeight = window.innerHeight;
 
 
 class Photo {
@@ -135,11 +135,11 @@ class Photo {
 function setup() {
   photos = [];
      file_dict = {}
-     for (var i = 0; i < file_list.length; i++){
+     for (var i = 0; i < file_list.length-15; i++){
        fileName = file_list[i];
        file_dict[fileName] = []
        name=  file_list[i].match(/[a-zA-Z ]+/g)[0];
-       description = "";//animals[name].info;
+       description = "";
        loc = locations_dict[fileName];
        photo = new Photo(name, fileName, loc, description)
        photo.file = loadImage("pictures/"+photo.image)
@@ -157,19 +157,19 @@ var imgwidth = screenWidth;
 var imgheight = screenHeight *9/10;
 var textBoxHeight = screenHeight/10;
 var img_x =  screenWidth/2 - imgwidth/2;
-var img_y = screenHeight*0.1//screenHeight/2 - imgheight/2;
+var img_y = screenHeight*0.1;
 
 function precise(x){
   return Number.parseFloat(x).toPrecision(3);
 }
 function inBox(){
-  pos = photos[current_animal].location
+  pos = photos[current_animal].location;
   left = pos[0];
   right = pos[1];
   topp = pos[2];
   bottom = pos[3];
   adaptedMouseX = (mouseX -img_x)/imgwidth;
-  adaptedMouseY =(mouseY -img_y)/imgheight
+  adaptedMouseY =(mouseY -img_y)/imgheight;
   if (adaptedMouseX > left && adaptedMouseX < right && adaptedMouseY > topp && adaptedMouseY< bottom){
     return true;
   }
