@@ -121,21 +121,6 @@ file_list = file_string.split("\n");
 var screenWidth = window.innerWidth;
 var  screenHeight = window.innerHeight;//650;
 
-// class rect_info {
-// 	constructor(left, right, top, bottom){
-//   	this.left = left;
-//     this.right = right;
-//     this.top = top;
-//     this.bottom = bottom;
-//   }
-// }
-// class Animal {
-// 	constructor(name){
-// 		this.name = name;
-// 		this.info = "";
-// 	  this.photos = [];
-// 	}
-// }
 
 class Photo {
   constructor(name, image, location, description){
@@ -147,30 +132,8 @@ class Photo {
   }
 }
 
-// squirrel =  new Animal("squirrel");
-// owl = new Animal("owl")
-// rabbit = new Animal("rabbit")
-// chipmunk = new Animal("chipmunk")
-// racoon = new Animal("racoon")
-// possum = new Animal("possum")
-// frog = new Animal("frog")
-// deer = new Animal("deer")
-// bird = new Animal("bird")
-// bat = new Animal("bat");
-//bat.info = "Bats are nocturnal. So they sleep in the day and are awake at night!"
-//bird.info = "Birds"
-//var locations = [new rect_info(20,20,20,20)];
-
-//var animals = {"squirrel":squirrel, "owl": owl, "rabbit": rabbit,"chipmunk":chipmunk,
-// "racoon":racoon, "possum":possum, "frog":frog,"deer":deer, "bird":bird, "bat":bat};
 function setup() {
   photos = [];
-    //for ( key in animals){
-        // var name = animals[key].name;
-         //for (i = 1; i < 3; i++){
-        //     animals[key].photos.push(loadImage("pictures/" + name + i + ".png"))
-        // }
-     //}
      file_dict = {}
      for (var i = 0; i < file_list.length; i++){
        fileName = file_list[i];
@@ -184,15 +147,12 @@ function setup() {
      }
 
 	logo = loadImage("logoclear.png");
-//	goodEndImg = loadImage("pictures/birdgoodend.png")
-//	badEndImg = loadImage("pictures/birdbadend.png")
   var cnv = createCanvas(window.innerWidth, window.innerHeight);//650);
   var cx = (windowWidth - window.innerWidth) / 2;
   var cy = (windowHeight -window.innerHeight) /2;
   cnv.position(cx,cy);
 }
 
-//var imageSize = 400;
 var imgwidth = screenWidth;
 var imgheight = screenHeight *9/10;
 var textBoxHeight = screenHeight/10;
@@ -248,26 +208,20 @@ function draw(){
     textSize(15);
     text(precise(((mouseX -img_x)/imgwidth)) + ", " + precise((mouseY -img_y)/imgheight), mouseX, mouseY)
   }
-  //noFill();
-  //rect(img_x + 0.387*imgwidth, img_y + 0.065*imgheight, 0.777*imgwidth - 0.385*imgwidth, 0.303*imgheight-0.065*imgheight);
+
 if(answered){
   noStroke();
-  //noFill();
-  //stroke(124,252,0,30);
-  //stroke(255,252,255,30);
-  //strokeWeight(50);
   fill(124,252,0,75)
   x = photos[current_animal].location[0];
   y= photos[current_animal].location[2];
   x2 = photos[current_animal].location[1];
   y2= photos[current_animal].location[3];
-  //rect(0,0, x, imgheight);
   drawBox([0,0,x,1]);
   drawBox(photos[current_animal].location)
   stroke(255);
   strokeWeight(1);
 }
-//  drawBox(0.387,0.77,0.065,0.303 );
+
   if(answered){
     fill(3,22,52);
     rect(next_box['left'],next_box['top'], next_box['width'], next_box['height'], 10);
@@ -281,14 +235,9 @@ if(answered){
 }
 
 function mousePressed(){
-  //current_animal+=1;
   if (answered == false){
     if(inBox()){
       answered = true;
-  //current_animal +=1;
-  //if (current_animal >= file_list.length){
-  //  current_animal = 0;
-  //}
     }
   }
 else{
