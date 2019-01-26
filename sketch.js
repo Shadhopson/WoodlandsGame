@@ -188,7 +188,7 @@ function setup() {
      console.log(file_dict)
 
   //console.log(photos)
-	logo = loadImage("logo.png");
+	logo = loadImage("logoclear.png");
 //	goodEndImg = loadImage("pictures/birdgoodend.png")
 //	badEndImg = loadImage("pictures/birdbadend.png")
   var cnv = createCanvas(window.innerWidth, window.innerHeight);//650);
@@ -263,9 +263,21 @@ function draw(){
   //rect(img_x + 0.387*imgwidth, img_y + 0.065*imgheight, 0.777*imgwidth - 0.385*imgwidth, 0.303*imgheight-0.065*imgheight);
 if(answered){
   noStroke();
+  //noFill();
+  //stroke(124,252,0,30);
+  //stroke(255,252,255,30);
+  //strokeWeight(50);
   fill(124,252,0,75)
+  x = photos[current_animal].location[0];
+  y= photos[current_animal].location[2];
+  x2 = photos[current_animal].location[1];
+  y2= photos[current_animal].location[3];
+  console.log(x);
+  //rect(0,0, x, imgheight);
+  drawBox([0,0,x,1]);
   drawBox(photos[current_animal].location)
   stroke(255);
+  strokeWeight(1);
 }
 //  drawBox(0.387,0.77,0.065,0.303 );
   if(answered){
