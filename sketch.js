@@ -118,7 +118,6 @@ locations_dict = {
 var debugging = true;
 current_animal = 0;
 file_list = file_string.split("\n");
-console.log(file_list);
 var screenWidth = window.innerWidth;
 var  screenHeight = window.innerHeight;//650;
 
@@ -177,17 +176,13 @@ function setup() {
        fileName = file_list[i];
        file_dict[fileName] = []
        name=  file_list[i].match(/[a-zA-Z ]+/g)[0];
-       console.log(name);
        description = "";//animals[name].info;
        loc = locations_dict[fileName];
        photo = new Photo(name, fileName, loc, description)
        photo.file = loadImage("pictures/"+photo.image)
-       //console.log(photo.fileName)
        photos.push(photo)
      }
-     console.log(file_dict)
 
-  //console.log(photos)
 	logo = loadImage("logoclear.png");
 //	goodEndImg = loadImage("pictures/birdgoodend.png")
 //	badEndImg = loadImage("pictures/birdbadend.png")
@@ -208,7 +203,6 @@ function precise(x){
   return Number.parseFloat(x).toPrecision(3);
 }
 function inBox(){
-  //console.log("hi")
   pos = photos[current_animal].location
   left = pos[0];
   right = pos[1];
@@ -229,9 +223,6 @@ function drawBox(pos){
   right = pos[1];
   topp = pos[2];
   bottom = pos[3];
-  //console.log(left);
-  //console.log(pos,left,right, topp, pos[2], bottom)
-  //fill(255,255,255,10);
   rect(img_x + left*imgwidth, img_y + topp*imgheight, right*imgwidth - left*imgwidth, bottom*imgheight-topp*imgheight, 20);
 }
 var answered = false;
@@ -245,12 +236,10 @@ function draw(){
   if (answered){
     textSize(textBoxHeight/1.5);
     text("That's the " + photos[current_animal].name+"! Awesome job!",img_x+ imgwidth/2, img_y -  textBoxHeight/3 );
-    console.log(photos[current_animal].name)
   }
   else{
   textSize(textBoxHeight/1.5);
   text("Can you find the "+ photos[current_animal].name+ "?",img_x+ imgwidth/2, img_y -  textBoxHeight/3 );
-  console.log(photos[current_animal].name)
 }
   image(photos[current_animal].file, img_x,img_y, imgwidth, imgheight);
   fill(255);
@@ -272,7 +261,6 @@ if(answered){
   y= photos[current_animal].location[2];
   x2 = photos[current_animal].location[1];
   y2= photos[current_animal].location[3];
-  console.log(x);
   //rect(0,0, x, imgheight);
   drawBox([0,0,x,1]);
   drawBox(photos[current_animal].location)
