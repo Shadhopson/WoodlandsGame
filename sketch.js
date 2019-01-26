@@ -135,7 +135,7 @@ class Photo {
 function setup() {
   photos = [];
      file_dict = {}
-     for (var i = 0; i < file_list.length-15; i++){
+     for (var i = 0; i < 10; i++){
        fileName = file_list[i];
        file_dict[fileName] = []
        name=  file_list[i].match(/[a-zA-Z ]+/g)[0];
