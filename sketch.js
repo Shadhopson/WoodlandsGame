@@ -1,3 +1,4 @@
+p5.disableFriendlyErrors = true;
 file_string = `bat2.jpg
 bat3.jpg
 bear1.jpg
@@ -135,7 +136,7 @@ class Photo {
 function preload(){
   photos = [];
      file_dict = {}
-     for (var i = 0; i < 35; i++){
+     for (var i = 0; i < 25; i++){
        fileName = file_list[i];
        file_dict[fileName] = []
        name=  file_list[i].match(/[a-zA-Z ]+/g)[0];
