@@ -133,7 +133,24 @@ class Photo {
   }
 }
 
-function preload(){
+//function preload(){
+  // photos = [];
+  //    file_dict = {}
+  //    for (var i = 0; i < 25; i++){
+  //      fileName = file_list[i];
+  //      file_dict[fileName] = []
+  //      name=  file_list[i].match(/[a-zA-Z ]+/g)[0];
+  //      description = "";
+  //      loc = locations_dict[fileName];
+  //      photo = new Photo(name, fileName, loc, description)
+  //      photo.file = loadImage("pictures/"+photo.image)
+  //      photos.push(photo)
+  //    }
+
+	//logo = loadImage("logoclear.png");
+//}
+
+function setup() {
   photos = [];
      file_dict = {}
      for (var i = 0; i < 30; i++){
@@ -148,23 +165,6 @@ function preload(){
      }
 
 	logo = loadImage("logoclear.png");
-}
-
-function setup() {
-  // photos = [];
-  //    file_dict = {}
-  //    for (var i = 0; i < 20; i++){
-  //      fileName = file_list[i];
-  //      file_dict[fileName] = []
-  //      name=  file_list[i].match(/[a-zA-Z ]+/g)[0];
-  //      description = "";
-  //      loc = locations_dict[fileName];
-  //      photo = new Photo(name, fileName, loc, description)
-  //      photo.file = loadImage("pictures/"+photo.image)
-  //      photos.push(photo)
-  //    }
-  //
-	// logo = loadImage("logoclear.png");
   var cnv = createCanvas(window.innerWidth, window.innerHeight);//650);
   var cx = (windowWidth - window.innerWidth) / 2;
   var cy = (windowHeight -window.innerHeight) /2;
