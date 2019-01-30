@@ -189,6 +189,7 @@ var answered = false;
 next_box = {"left":8/10*imgwidth,"top":19/20*imgheight, "width":1.8/10*imgwidth, "height":1/10*imgheight};
 function draw(){
   fill(3,22,52);
+  noStroke();
   rect(img_x, 0, imgwidth, textBoxHeight);
   image(logo, img_x+imgwidth/50,textBoxHeight/20,imgwidth/7, textBoxHeight*13/15)
   fill(255);
