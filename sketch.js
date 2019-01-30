@@ -135,7 +135,7 @@ class Photo {
 function preload(){
   photos = [];
      file_dict = {}
-     for (var i = 0; i < file_list.length; i++){
+     for (var i = 0; i < 45; i++){
        fileName = file_list[i];
        file_dict[fileName] = []
        name=  file_list[i].match(/[a-zA-Z ]+/g)[0];
@@ -242,12 +242,17 @@ if(answered){
 
   if(answered){
     fill(3,22,52);
+    textSize(textBoxHeight/4)
+    winText = "Nice Work! Keep Going?"
+    if (textWidth(winText)+0.1/10*imgwidth >= next_box['width'] ){
+      next_box['width'] = textWidth(winText) + 0.1/10*imgwidth +10;
+    }
     rect(next_box['left'],next_box['top'], next_box['width'], next_box['height'], 10);
     fill(255);
-    textSize(textBoxHeight/4)
+    //textSize(textBoxHeight/4)
     textAlign(LEFT, TOP)
     stroke(255);
-    //winText
+    //winText = "Nice Work! Keep Going?"
     text("Nice Work! Keep Going?",8.1/10*imgwidth,19.5/20*imgheight)
   }
 
