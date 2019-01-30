@@ -273,6 +273,9 @@ else{
         if (current_animal >= file_list.length){
           current_animal = 0;
         }
+        if(current_animal >= 30){
+          window.location.reload();
+        }
       }
 }
 return false;
