@@ -135,7 +135,7 @@ class Photo {
 function preload(){
   photos = [];
      file_dict = {}
-     for (var i = 0; i < 20; i++){
+     for (var i = 0; i < file_list.length; i++){
        fileName = file_list[i];
        file_dict[fileName] = []
        name=  file_list[i].match(/[a-zA-Z ]+/g)[0];
@@ -247,6 +247,7 @@ if(answered){
     textSize(textBoxHeight/4)
     textAlign(LEFT, TOP)
     stroke(255);
+    //winText
     text("Nice Work! Keep Going?",8.1/10*imgwidth,19.5/20*imgheight)
   }
 
