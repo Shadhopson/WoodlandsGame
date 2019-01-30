@@ -132,6 +132,11 @@ class Photo {
     this.file = "";
   }
 }
+selected_creatures = [];
+for (var i =0; i < 25; i++){
+  selected_creatures.push( Math.floor(Math.random() * (file_list.length-1)));
+}
+//console.log(selected_creatures);
 
 //function preload(){
   // photos = [];
@@ -153,7 +158,10 @@ class Photo {
 function setup() {
   photos = [];
      file_dict = {}
-     for (var i = 0; i < 30; i++){
+     for (var i = 0; i < 25; i++){
+       k = i;
+       console.log(i);
+       i = selected_creatures[i];
        fileName = file_list[i];
        file_dict[fileName] = []
        name=  file_list[i].match(/[a-zA-Z ]+/g)[0];
@@ -162,6 +170,7 @@ function setup() {
        photo = new Photo(name, fileName, loc, description)
        photo.file = loadImage("pictures/"+photo.image)
        photos.push(photo)
+       i = k;
      }
 
 	logo = loadImage("logoclear.png");
@@ -273,7 +282,7 @@ else{
         if (current_animal >= file_list.length){
           current_animal = 0;
         }
-        if(current_animal >= 30){
+        if(current_animal >= 25){
           window.location.reload();
         }
       }
