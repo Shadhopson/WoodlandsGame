@@ -134,7 +134,13 @@ class Photo {
 }
 selected_creatures = [];
 for (var i =0; i < 25; i++){
-  selected_creatures.push( Math.floor(Math.random() * (file_list.length-1)));
+  randnum =Math.floor(Math.random() * (file_list.length-1));
+  if (selected_creatures.includes(randnum)){
+    i -=1
+  }
+  else{
+    selected_creatures.push(randnum);
+  }
 }
 //console.log(selected_creatures);
 
