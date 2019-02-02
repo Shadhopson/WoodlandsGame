@@ -54,6 +54,64 @@ weasel3.jpg
 woodrat1.JPG
 woodrat2.jpg`;
 
+fact_dict = {
+  "bat2.jpg": "Bats are the only mamals that can fly!",
+  "bat3.jpg": "Bats are nocturnal (active at night)",
+  "bear1.jpg": "Bears mark trees to communicate with other bears.",
+  "bear2.jpg": "Bears are excellent swimmers.",
+  "bear3.jpg": "Black bears mostly forage around twilight.",
+  "bear4.jpg": "Most of the black bears' diet is vegetation.",
+  "beaver1.jpg": "Beavers are the largest living rodent in the world.",
+  "beaver2.jpg": "Beavers create dams to make ponds.",
+  "bobcat1.jpg": "Bobcats are about twice as big as housecats.",
+  "bobcat2.jpg":"Bobcats can leap 10 feet to pounce on prey.",
+  "bobcat3.jpg":"Bobcats eat small animals like squirrels and birds.",
+  "cougar1.jpg":"They're also called pumas, mountain lions, or panthers.",
+  "cougar2.jpg":"Cougars are the biggest cat in North America.",
+  "cougar3.jpg":"Cougars mostly hunt deer and other mamals.",
+  "coyote1.jpg":"Coyotes hunt at night.",
+  "coyote2.jpg":"Coyotes howl to tell other coyotes where they are.",
+  "coyote3.jpg":"Coyotes have been spotted in Manhattan before.",
+  "coyote4.jpg":"Coyotes mark their territory with their urine.",
+  "deer1.jpg":"Male deer grow new antlers every year.",
+  "grey fox1.jpg":"Grey foxes have hooked claws for climbing trees.",
+  "grey fox2.jpg":"Grey foxes use caves, and hollowed trees as dens.",
+  "marten1.jpg":"American Martens can tunnel in snow to find food.",
+  "marten2.jpg":"American Martens weigh between 1 and 3 pounds.",
+  "mink1.png":"Minks often add grass, or fur to their den for comfort.",
+  "mink2.jpeg":"Minks are carnivorous. They only eat meat.",
+  "mink2.jpg":"Minks' fur has oil on it that repels water.",
+  "moose1.JPG":"Moose are the largest of all deer species.",
+  "moose4.jpg":"Moose antlers can spread 6 feet from end to end.",
+  "moose2.jpg":"Moose can run up to 35 miles per hour.",
+  "moose3.jpg":"Moose are good swimmers, and eat aquatic plants.",
+  "muskrat.jpg":"Muskrats live in family groups.",
+  "muskrat3.jpg":"Muskrats sometimes live in beaver lodges",
+  "muskrat2.JPG":"Muskrats are prey to many animals.",
+  "muskrat1.jpg":"Muskrats spend most of their time in the water",
+  "otter1.jpg":"Webbed feet make otters great swimmers.",
+  "otter2.JPG":"Otter fur traps air, making them more buoyant.",
+  "otter3.jpg":"Otters eat about a quarter of their body weight daily.",
+  "porcupine2.jpg":"Porcupines' point up their quills when threatened.",
+  "raccoon2.jpg":"In winter raccoons sleep more but don't hibernate.",
+  "raccoon3.jpg":"Raccoons are nocturnal, they sleep during the day.",
+  "red fox1.jpg":"The foxes tail helps it stay balanced.",
+  "weasel1.jpg":"Weasels eat about 40% of their body weight daily.",
+  "weasel2.jpg":"Weasels are active all year long.",
+  "weasel3.jpg":"Long-tailed Weasel's fur changes color in winter.",
+  "woodrat1.JPG":"Allegheny Woodrats are mostly vegetarian.",
+  "woodrat2.jpg":"Allegheny Woodrats are sadly endangered.",
+  "bat1.png": "Bats can use echolocation to see",
+  "chipmunk1.png": "Chipmunks can gather up to 165 acorns a day.",
+  "frog1.png": "Frogs get water by absorbing it through their skin.",
+  "owl1.png": "Owls can turn their heads up to 270 degrees.",
+  "possum1.png":"A possum eats over 5000 ticks every tick season.",
+  "rabbit1.png": "Rabits are herbivores, eating only plants.",
+  "racoon1.png": "Racoons have 5 fingered hands like us!",
+  "squirrel1.png":"A squirrel's teeth never stops growing.",
+  "squirrel2.png":"Sometimes nuts they bury grow into trees."
+}
+
 locations_dict = {
   "bat2.jpg":[0.3,0.7,0.25,0.74],
   "bat3.jpg":[0.44,0.72,0.26,0.75],
@@ -171,7 +229,7 @@ function setup() {
        fileName = file_list[i];
        file_dict[fileName] = []
        name=  file_list[i].match(/[a-zA-Z ]+/g)[0];
-       description = "";
+       description = fact_dict[file_list[i]];
        loc = locations_dict[fileName];
        photo = new Photo(name, fileName, loc, description)
        photo.file = loadImage("pictures/"+photo.image)
@@ -180,6 +238,7 @@ function setup() {
      }
 
 	logo = loadImage("logoclear.png");
+  console.log(logo);
   var cnv = createCanvas(window.innerWidth, window.innerHeight);//650);
   var cx = (windowWidth - window.innerWidth) / 2;
   var cy = (windowHeight -window.innerHeight) /2;
@@ -229,7 +288,8 @@ function draw(){
   textAlign(CENTER, CENTER)
   if (answered){
     textSize(textBoxHeight/1.5);
-    text("That's the " + photos[current_animal].name+"! Awesome job!",img_x+ imgwidth/2, img_y -  textBoxHeight/3 );
+    text(photos[current_animal].description,img_x+ imgwidth/2, img_y -  textBoxHeight/3 );
+    //text("That's the " + photos[current_animal].name+"! Awesome job!",img_x+ imgwidth/2, img_y -  textBoxHeight/3 );
   }
   else{
   textSize(textBoxHeight/1.5);
