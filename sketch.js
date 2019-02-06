@@ -2,7 +2,7 @@ p5.disableFriendlyErrors = true;
 file_string = `bat2.jpg
 box turtle1.jpg
 deer2.jpg
-salamander1.jpg
+salamander1.JPG
 snake1.jpg
 toad1.jpeg
 treecreeper1.jpg
@@ -66,7 +66,7 @@ woodrat2.jpg`;
 fact_dict = {
   "box turtle1.jpg":"Box turtles can close their shells.",
   "deer2.jpg":"Deer can see very well at night.",
-  "salamander1.jpg":"Salamanders are amphibians!",
+  "salamander1.JPG":"Salamanders are amphibians!",
   "snake1.jpg":"Snakes swallow their prey whole.",
   "toad1.jpeg":"American toads hibernate underground in winter.",
   "treecreeper1.jpg":"Treecreepers always go up trees, never down.",
@@ -133,7 +133,7 @@ fact_dict = {
 locations_dict = {
   "box turtle1.jpg":[0.25,0.42,0.28,0.5],
   "deer2.jpg":[0.28,0.4,0.34,0.66],
-  "salamander1.jpg":[0.34,0.6,0.23,0.53],
+  "salamander1.JPG":[0.34,0.6,0.23,0.53],
   "snake1.jpg":[0.03,0.6,0.49,0.66],
   "toad1.jpeg":[0.32,0.4,0.44,0.6],
   "treecreeper1.jpg":[0.12,0.36,0.46,0.8],
