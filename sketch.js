@@ -1,5 +1,14 @@
 p5.disableFriendlyErrors = true;
 file_string = `bat2.jpg
+box turtle1.jpg
+deer2.jpg
+salamander1.jpg
+snake1.jpg
+toad1.jpeg
+treecreeper1.jpg
+treecreeper2.jpg
+whip-poor-will1.jpg
+woodcock.jpg
 bat3.jpg
 bear1.jpg
 bear2.jpg
@@ -55,6 +64,15 @@ woodrat1.JPG
 woodrat2.jpg`;
 
 fact_dict = {
+  "box turtle1.jpg":"Box turtles can close their shells.",
+  "deer2.jpg":"Deer can see very well at night.",
+  "salamander1.jpg":"Salamanders are amphibians!",
+  "snake1.jpg":"Snakes swallow their prey whole.",
+  "toad1.jpeg":"American toads hibernate underground in winter.",
+  "treecreeper1.jpg":"Treecreepers always go up trees, never down.",
+  "treecreeper2.jpg":"Treecreepers eat mostly insects.",
+  "whip-poor-will1.jpg":"They are crepescular, active at dawn and dusk.",
+  "woodcock.jpg":"Woodcocks migrate South in the colder months.",
   "bat2.jpg": "Bats are the only mamals that can fly!",
   "bat3.jpg": "Bats are nocturnal (active at night)",
   "bear1.jpg": "Bears mark trees to communicate with other bears.",
@@ -107,12 +125,21 @@ fact_dict = {
   "owl1.png": "Owls can turn their heads up to 270 degrees.",
   "possum1.png":"A possum eats over 5000 ticks every tick season.",
   "rabbit1.png": "Rabits are herbivores, eating only plants.",
-  "racoon1.png": "Racoons have 5 fingered hands like us!",
+  "raccoon1.jpg": "Racoons have 5 fingered hands like us!",
   "squirrel1.png":"A squirrel's teeth never stops growing.",
   "squirrel2.png":"Sometimes nuts they bury grow into trees."
 }
 
 locations_dict = {
+  "box turtle1.jpg":[0.25,0.42,0.28,0.5],
+  "deer2.jpg":[0.28,0.4,0.34,0.66],
+  "salamander1.jpg":[0.34,0.6,0.23,0.53],
+  "snake1.jpg":[0.03,0.6,0.49,0.66],
+  "toad1.jpeg":[0.32,0.4,0.44,0.6],
+  "treecreeper1.jpg":[0.12,0.36,0.46,0.8],
+  "treecreeper2.jpg":[0.57,0.64,0.58,0.81],
+  "whip-poor-will1.jpg":[0.18,0.72, 0.16,0.7],
+  "woodcock.jpg":[0.42,0.59,0.34,0.57],
   "bat2.jpg":[0.3,0.7,0.25,0.74],
   "bat3.jpg":[0.44,0.72,0.26,0.75],
   "bear1.jpg":[0.38,0.6,0.39,0.67],
@@ -192,32 +219,15 @@ class Photo {
 }
 selected_creatures = [];
 for (var i =0; i < 25; i++){
-  randnum =Math.floor(Math.random() * (file_list.length-1));
-  if (selected_creatures.includes(randnum)){
-    i -=1
-  }
+   randnum =Math.floor(Math.random() * (file_list.length-1));
+   if (selected_creatures.includes(randnum)){
+     i -=1
+   }
   else{
     selected_creatures.push(randnum);
   }
 }
-//console.log(selected_creatures);
 
-//function preload(){
-  // photos = [];
-  //    file_dict = {}
-  //    for (var i = 0; i < 25; i++){
-  //      fileName = file_list[i];
-  //      file_dict[fileName] = []
-  //      name=  file_list[i].match(/[a-zA-Z ]+/g)[0];
-  //      description = "";
-  //      loc = locations_dict[fileName];
-  //      photo = new Photo(name, fileName, loc, description)
-  //      photo.file = loadImage("pictures/"+photo.image)
-  //      photos.push(photo)
-  //    }
-
-	//logo = loadImage("logoclear.png");
-//}
 
 function setup() {
   photos = [];
@@ -228,7 +238,7 @@ function setup() {
        i = selected_creatures[i];
        fileName = file_list[i];
        file_dict[fileName] = []
-       name=  file_list[i].match(/[a-zA-Z ]+/g)[0];
+       name=  file_list[i].match(/[a-zA-Z- ]+/g)[0];
        description = fact_dict[file_list[i]];
        loc = locations_dict[fileName];
        photo = new Photo(name, fileName, loc, description)
