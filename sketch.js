@@ -359,7 +359,8 @@ else{
           current_animal = 0;
         }
         if(current_animal >= 25){
-          window.location.reload();
+          console.log('done');
+          //window.location.reload();
         }
       }
 }
