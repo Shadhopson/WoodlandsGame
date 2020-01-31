@@ -358,7 +358,7 @@ else{
         if (current_animal >= file_list.length){
           current_animal = 0;
         }
-        if(current_animal >= 25){
+        if(current_animal >= 24){
           console.log('done');
           //window.location.reload();
         }
