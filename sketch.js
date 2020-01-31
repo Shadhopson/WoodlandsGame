@@ -247,8 +247,8 @@ function setup() {
        i = k;
      }
 
-	logo = loadImage("logoclear.png");
-  console.log(logo);
+	//logo = loadImage("logoclear.png");
+  //console.log(logo);
   var cnv = createCanvas(window.innerWidth, window.innerHeight);//650);
   var cx = (windowWidth - window.innerWidth) / 2;
   var cy = (windowHeight -window.innerHeight) /2;
@@ -293,7 +293,7 @@ function draw(){
   fill(3,22,52);
   noStroke();
   rect(img_x, 0, imgwidth, textBoxHeight);
-  image(logo, img_x+imgwidth/50,textBoxHeight/20,imgwidth/7, textBoxHeight*13/15)
+  //image(logo, img_x+imgwidth/50,textBoxHeight/20,imgwidth/7, textBoxHeight*13/15)
   fill(255);
   textAlign(CENTER, CENTER)
   if (answered){
@@ -360,7 +360,7 @@ else{
         }
         if(current_animal >= 24){
           console.log('done');
-          //window.location.reload();
+          window.location.reload(true);
         }
       }
 }
