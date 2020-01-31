@@ -360,7 +360,8 @@ else{
         }
         if(current_animal >= 24){
           console.log('done');
-          window.location.reload(true);
+          current_animal = 0;
+          //window.location.reload(true);
         }
       }
 }
