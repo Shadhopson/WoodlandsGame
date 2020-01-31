@@ -297,7 +297,7 @@ function draw(){
   fill(255);
   textAlign(CENTER, CENTER)
   if (answered){
-    textSize(textBoxHeight/1.5);
+    textSize(textBoxHeight/2);
     text(photos[current_animal].description,img_x+ imgwidth/2, img_y -  textBoxHeight/3 );
     //text("That's the " + photos[current_animal].name+"! Awesome job!",img_x+ imgwidth/2, img_y -  textBoxHeight/3 );
   }
@@ -333,13 +333,14 @@ if(answered){
     if (textWidth(winText)+0.1/10*imgwidth >= next_box['width'] ){
       next_box['width'] = textWidth(winText) + 0.1/10*imgwidth +10;
     }
-    rect(next_box['left'],next_box['top'], next_box['width'], next_box['height'], 10);
+    rect(next_box['left'],next_box['top'], 140, next_box['height'], 10);
     fill(255);
+    console.log(next_box['width'])
     //textSize(textBoxHeight/4)
     textAlign(LEFT, TOP)
     stroke(255);
     //winText = "Nice Work! Keep Going?"
-    text("Nice Work! Keep Going?",8.1/10*imgwidth,19.5/20*imgheight)
+    text("Nice! Keep Going?",8.1/10*imgwidth,19.5/20*imgheight)
   }
 
 }
