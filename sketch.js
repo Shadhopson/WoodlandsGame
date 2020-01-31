@@ -333,7 +333,7 @@ if(answered){
     if (textWidth(winText)+0.1/10*imgwidth >= next_box['width'] ){
       next_box['width'] = textWidth(winText) + 0.1/10*imgwidth +10;
     }
-    rect(next_box['left'],next_box['top'], 160, next_box['height'], 10);
+    rect(next_box['left'],next_box['top'], 180, next_box['height'], 10);
     fill(255);
     console.log(next_box['width'])
     //textSize(textBoxHeight/4)
