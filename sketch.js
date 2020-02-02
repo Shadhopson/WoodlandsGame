@@ -28,8 +28,8 @@ coyote2.jpg
 coyote3.jpg
 coyote4.jpg
 deer1.jpg
-frog1.png`;
-/*grey fox1.jpg
+frog1.png
+grey fox1.jpg
 grey fox2.jpg
 marten1.jpg
 marten2.jpg
@@ -61,7 +61,7 @@ weasel1.jpg
 weasel2.jpg
 weasel3.jpg
 woodrat1.JPG
-woodrat2.jpg`;*/
+woodrat2.jpg`;
 
 fact_dict = {
   "box turtle1.jpg":"Box turtles can close their shells.",
@@ -227,12 +227,12 @@ for (var i =0; i < 25; i++){
     selected_creatures.push(randnum);
   }
 }
-selected_creatures = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+selected_creatures = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29]
 
 function setup() {
   photos = [];
      file_dict = {}
-     for (var i = 0; i < 25; i++){
+     for (var i = 0; i < selected_creatures.length; i++){
        k = i;
        console.log(i);
        i = selected_creatures[i];
@@ -356,14 +356,14 @@ else{
       mouseY > next_box['top'] && mouseY < next_box['top'] + next_box['height']){
         answered = false;
         current_animal +=1;
-        if (current_animal >= file_list.length){
+        if (current_animal >= selected_creatures.length){
           current_animal = 0;
         }
-        if(current_animal >= 24){
+        /*if(current_animal >= 24){
           console.log('done');
           current_animal = 0;
           //window.location.reload(true);
-        }
+        }*/
       }
 }
 return false;
