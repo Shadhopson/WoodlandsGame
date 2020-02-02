@@ -232,7 +232,7 @@ selected_creatures = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
 function setup() {
   photos = [];
      file_dict = {}
-     for (var i = 0; i < selected_creatures.length; i++){
+     for (var i = 0; i < selected_creatures.length-1; i++){
        k = i;
        console.log(i);
        i = selected_creatures[i];
@@ -335,7 +335,7 @@ if(answered){
     }
     rect(next_box['left'],next_box['top'], 180, next_box['height'], 10);
     fill(255);
-    console.log(next_box['width'])
+    //console.log(next_box['width'])
     //textSize(textBoxHeight/4)
     textAlign(LEFT, TOP)
     stroke(255);
